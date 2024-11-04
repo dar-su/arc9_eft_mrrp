@@ -30,8 +30,7 @@ SWEP.Trivia = {
 SWEP.Description = [[The MP-153 smoothbore multi-shot shotgun, manufactured by IzhMekh ("Izhevsky Mechanical Plant"). A reliable and practical hunting and self-defense weapon.]]
 
 SWEP.StandardPresets = {
-    -- "[Breacher]XQAAAQDxAQAAAAAAAAA9iIIiM7tuo1AtT00OeFD3QBNat72mxqHsDzw/jsqi/g9xXSLCVEdEzuopZ1zAPATGjsZRwSNXip83BQY15AotCVygnxfiOccvPHrBNHaPomIGjPl5NHBMW3QN5tCHUomIqSwPI6pPbIdSLJiOMe2LDAO2H7RtyXHKuM/GusyFnzGVSWlpAKWawhHTtV738WrQWbrlXAvT1W+5rZpr90erkGKIJUNGy6fsyYqeTfL5+mVXN8H8LGFqj1orFkUbiBFF+IVD8UGabF1R808HAA==",
-    -- "[Hammer]XQAAAQCKAQAAAAAAAAA9iIIiM7tuo1AtT00OeFD3QBNat72mxqHsDzw/jsqi/g9xXSLCVEdEzuopZ1zAPATGjsZRwSNXip83TnhqbVGJ66+9xH9vxxTIpVcBbYR+kE3A3phx1MQA/HlFSHqcz6148Y4Yjo2wGw4JBcEEJeWqH3bw2LfcZzAeeqMdi7YWO5ttag7OeP//hAssBNa8kg4frZ4heRjKKoM7mrIwD+V/A286CpUA"
+    -- "[Ultima]XQAAAQAZAgAAAAAAAAA9iIIiM7tuo1AtT00OeFD3YPfocKoikvJMId48ZDBq+iHfog+A8c9A5B7hAB27XdX5qDS4/H3XqBOEbtI8BAsg2p2Pw8zGQ6zH/sO1g0PQ+9wFCOEEtKzrytxgs8iurX7yLP+Ox9VlNzUOnVLztzJdv7Np5bUfJJ5Lvnj3Xr+3VSgrWkEQDYNQgkyTthN9+2unnhLn3aXU/GLPyANj3SWBFLm0oajrWGY00mdgmrdTyPdWWn9TAQQLE6tMygA=",
 }
 
 SWEP.Slot = 3
@@ -231,11 +230,8 @@ SWEP.TracerColor = Color(255, 225, 200)
 --          Positions and offsets
 
 SWEP.IronSights = {
-    Pos = Vector(-4.27, -6, 0.41),
-    -- Pos = Vector(-4.27, -6, 1),
-    -- Ang = Angle(0, 1.2, 0),
-    Ang = Angle(0, 0.45, 0),
-    -- Ang = Angle(0, 0.0, 0),
+    Pos = Vector(-4.27, -6, 0.85),
+    Ang = Angle(0, 0.2, 0),
     Midpoint = { Pos = Vector(-1, 0, 8), Ang = Angle(0, 0, -145) },
     Magnification = 1.1,
     ViewModelFOV = 54

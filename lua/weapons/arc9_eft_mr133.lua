@@ -30,8 +30,7 @@ SWEP.Trivia = {
 SWEP.Description = [[The MP-133 is a multi-shot pump-action shotgun produced by IzhMekh. It is the evolution of the earlier IZh-81 pump-action shotgun and is intended primarily for civilian and security markets.]]
 
 SWEP.StandardPresets = {
-    -- "[Breacher]XQAAAQDxAQAAAAAAAAA9iIIiM7tuo1AtT00OeFD3QBNat72mxqHsDzw/jsqi/g9xXSLCVEdEzuopZ1zAPATGjsZRwSNXip83BQY15AotCVygnxfiOccvPHrBNHaPomIGjPl5NHBMW3QN5tCHUomIqSwPI6pPbIdSLJiOMe2LDAO2H7RtyXHKuM/GusyFnzGVSWlpAKWawhHTtV738WrQWbrlXAvT1W+5rZpr90erkGKIJUNGy6fsyYqeTfL5+mVXN8H8LGFqj1orFkUbiBFF+IVD8UGabF1R808HAA==",
-    -- "[Hammer]XQAAAQCKAQAAAAAAAAA9iIIiM7tuo1AtT00OeFD3QBNat72mxqHsDzw/jsqi/g9xXSLCVEdEzuopZ1zAPATGjsZRwSNXip83TnhqbVGJ66+9xH9vxxTIpVcBbYR+kE3A3phx1MQA/HlFSHqcz6148Y4Yjo2wGw4JBcEEJeWqH3bw2LfcZzAeeqMdi7YWO5ttag7OeP//hAssBNa8kg4frZ4heRjKKoM7mrIwD+V/A286CpUA"
+    "[Tactical]XQAAAQABAgAAAAAAAAA9iIIiM7tuo1AtT00OeFD3YPfn/zZGpoCZCZkLEt2OnrA8dMne7D4+i9ZAnYKgXnZE0ay6ykj17QvYdhf1RR5xprFWCanc2d+erY+hn+IDPQK/OtkXmcPvcmilSAp0V5DoYGkX5odkEsqFzk1h9oA7gSavmD9Voli8QRIKAd7/ePofOokWlqJyoHhECNYmfGdyKHo2m7/32nFm0w9siJUaXvAj4pRRmzc9NeyH6CXmxyuNaIs/odcvt9u85Nc/q57r9VmDBTfsmZ22B5C6151p5zcaB5AHNw==",
 }
 
 SWEP.Slot = 3
@@ -231,11 +230,8 @@ SWEP.TracerColor = Color(255, 225, 200)
 --          Positions and offsets
 
 SWEP.IronSights = {
-    Pos = Vector(-4.27, -6, 0.41),
-    -- Pos = Vector(-4.27, -6, 1),
-    -- Ang = Angle(0, 1.2, 0),
+    Pos = Vector(-4.27, -6, 0.85),
     Ang = Angle(0, 0.45, 0),
-    -- Ang = Angle(0, 0.0, 0),
     Midpoint = { Pos = Vector(-1, 0, 8), Ang = Angle(0, 0, -145) },
     Magnification = 1.1,
     ViewModelFOV = 54
