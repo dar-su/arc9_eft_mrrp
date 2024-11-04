@@ -1487,13 +1487,7 @@ ATT.Hook_DoRT = function(swep)
     cam.Start2D()
         surface.SetDrawColor( 255, 255, 255, 255 )
         surface.SetMaterial(reticlemat)
-        -- surface.DrawTexturedRect(8, 8, 64-16, 64-16)
         surface.DrawTexturedRect(0, 0, rtsize, rtsize)
-        -- surface.DrawTexturedRect(-64, -64, 128, 128)
-
-        -- surface.DrawTexturedRect(-128, -128, 512, 512)
-        -- surface.DrawRect(64-2, 0, 9, 128)
-        -- surface.DrawRect(0, 64-2, 128, 9)
     cam.End2D()
 
     render.PopRenderTarget()
