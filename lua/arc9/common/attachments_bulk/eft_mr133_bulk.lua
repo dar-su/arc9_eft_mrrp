@@ -1504,7 +1504,135 @@ end
 
 ARC9.LoadAttachment(ATT, "eft_mr155u_thermal")
 
+///////////////////////////////////////      eft_mr155u_thermal_alt
 
+ATT = {}
+
+ATT.PrintName = "MP-155 Ultima thermal camera (ALT)"
+ATT.CompactName = "Ultima camera ALT"
+ATT.Icon = Material("entities/eft_mr133_attachments/mp155_ultima_thermal_camera_alt.png", "mips smooth")
+ATT.Description = "A special thermal imaging camera for the \"Ultima\" modification for the MP-155 shotgun. The image from the camera is displayed on the front display on the back of the weapon. Manufactured by Kalashnikov Group."
+
+ATT.EFTErgoAdd = -3
+ATT.CustomCons = { Ergonomics = "-3" }
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_mr155u_camera"}
+
+
+local rtmat, rtsurf, rtsize, rtnextdraw, reticlemat
+
+if CLIENT then
+    rtsize = 96
+    rtmat = GetRenderTargetEx("arc9_pipscope_extra9", rtsize, rtsize, RT_SIZE_NO_CHANGE, MATERIAL_RT_DEPTH_SEPARATE, bit.bor(1, 256), 0, IMAGE_FORMAT_BGRA8888)
+
+    rtsurf = Material("effects/arc9_eft/rt2")
+    rtnextdraw = 0
+    
+    reticlemat = Material("effects/arc9_eft/ultima_reticle.png")
+end
+
+ATT.ActivateElements = {"eft_mr155u_thermal"}
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 0, -5.3),
+        Ang = Angle(0, -90, 0),
+        Magnification = 1.1,
+        ViewModelFOV = 54,
+        IsIronSight = true
+    }
+}
+
+local flirtable = {
+    RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
+        ["$pp_colour_addr"] = 5,
+        ["$pp_colour_addg"] = 1,
+        ["$pp_colour_addb"] = 9,
+        ["$pp_colour_brightness"] = -2.0,
+        ["$pp_colour_contrast"] = 0.2,
+        ["$pp_colour_colour"] = 0.05,
+        ["$pp_colour_mulr"] = 0,
+        ["$pp_colour_mulg"] = 0,
+        ["$pp_colour_mulb"] = 0,
+        ["$pp_colour_inv"] = 1
+    }, 
+    RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
+        ["$pp_colour_addr"] = 0,
+        ["$pp_colour_addg"] = 0,
+        ["$pp_colour_addb"] = 0,
+        ["$pp_colour_brightness"] = -0.5,
+        ["$pp_colour_contrast"] = 1.5,
+        ["$pp_colour_colour"] = 0,
+        ["$pp_colour_mulr"] = 0,
+        ["$pp_colour_mulg"] = 0,
+        ["$pp_colour_mulb"] = 0,
+        ["$pp_colour_inv"] = 0
+    }
+}
+
+ATT.Hook_DoRT = function(swep)
+    if !swep:GetOwner() then return end
+
+    if !(CurTime() > rtnextdraw) then return end
+    rtnextdraw = CurTime() + 1/15
+    local fovv = swep:GetViewModelFOV()/4
+
+    if ARC9.OverDraw then return end
+    
+    local rtpos, rtang = swep:GetShootPos()
+
+    rtang.r = rtang.r + EyeAngles().z -- lean fix
+
+    local sighttbl = swep:GetSight()
+
+    local rt = {
+        x = 0,
+        y = 0,
+        w = rtsize,
+        h = rtsize,
+        angles = rtang,
+        origin = rtpos,
+        drawviewmodel = false,
+        fov = 3.5,
+        fov = fovv,
+        znear = 16,
+        zfar = 16000
+    }
+    
+    render.PushRenderTarget(rtmat, 0, 0, rtsize, rtsize)
+
+    ARC9.OverDraw = true
+    render.RenderView(rt)
+    ARC9.OverDraw = false
+
+    cam.Start3D(rtpos, rtang, fovv, 0, 0, rtsize, rtsize, 16, 16000)
+        swep:DoFLIR(flirtable)
+    cam.End3D()
+
+    render.UpdateScreenEffectTexture()
+
+    cam.Start2D()
+        surface.SetDrawColor( 255, 255, 255, 255 )
+        surface.SetMaterial(reticlemat)
+        surface.DrawTexturedRect(0, 0, rtsize, rtsize)
+    cam.End2D()
+
+    render.PopRenderTarget()
+
+    rtsurf:SetTexture("$basetexture", rtmat)
+end
+
+-- ATT.DrawFunc = function(swep, model, wm)
+--     local vm = swep:GetVM()
+--     if !swep:GetOwner() or !vm or wm then return end
+--     -- model:SetSubMaterial()
+--     vm:SetSubMaterial(1, "effects/arc9_eft/rt")
+-- end
+
+ARC9.LoadAttachment(ATT, "eft_mr155u_thermal_alt")
 
 ///////////////////////////////////////      eft_mr133_mag_6
 
