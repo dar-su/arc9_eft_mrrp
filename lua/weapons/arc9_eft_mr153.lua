@@ -5,21 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_mr153", "MP-153", "en")
-ARC9:AddPhrase("eft_weapon_mr153", "MP-153", "ru")
-ARC9:AddPhrase("eft_weapon_mr153", "Mrr 153", "uwu")
-SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mr153")
-SWEP.Description = [[The MP-153 smoothbore multi-shot shotgun, manufactured by IzhMekh ("Izhevsky Mechanical Plant"). A reliable and practical hunting and self-defense weapon.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mp153")
+SWEP.Description = "eft_weapon_mp153_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_semisg")
+SWEP.Class = "eft_class_weapon_semisg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_sg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "IzhMekh",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12 Gauge",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= "Something",
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_rus"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "2000"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_kalash",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_12g",
+    ["eft_trivia_act3"]= "eft_trivia_act_gas",
+    ["eft_trivia_country4"] = "eft_trivia_country_rus",
+    ["eft_trivia_year5"] = "2000"
 }
 
 SWEP.StandardPresets = false 

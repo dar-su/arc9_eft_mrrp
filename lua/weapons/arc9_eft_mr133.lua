@@ -5,21 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_mr133", "MP-133", "en")
-ARC9:AddPhrase("eft_weapon_mr133", "MP-133", "ru")
-ARC9:AddPhrase("eft_weapon_mr133", "Mrr 133", "uwu")
-SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mr133")
-SWEP.Description = [[The MP-133 is a multi-shot pump-action shotgun produced by IzhMekh. It is the evolution of the earlier IZh-81 pump-action shotgun and is intended primarily for civilian and security markets.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mp133")
+SWEP.Description = "eft_weapon_mp133_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_pumpsg")
+SWEP.Class = "eft_class_weapon_pumpsg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_sg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "IzhMekh",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12 Gauge",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= "Pump",
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_rus"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "2000"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_kalash",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_12g",
+    ["eft_trivia_act3"]= "eft_trivia_act_pump",
+    ["eft_trivia_country4"] = "eft_trivia_country_rus",
+    ["eft_trivia_year5"] = "2000"
 }
 
 SWEP.StandardPresets = {

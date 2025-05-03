@@ -7,14 +7,10 @@ SWEP.Base = "arc9_eft_mr153"
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - Escape From Tarkov"
 
-ARC9:AddPhrase("eft_weapon_mr155", "MP-155", "en")
-ARC9:AddPhrase("eft_weapon_mr155", "MP-155", "ru")
-ARC9:AddPhrase("eft_weapon_mr155", "Mrr 155", "uwu")
-
-SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mr155")
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mp155")
 SWEP.ViewModel = "models/weapons/arc9/darsu_eft/c_mr155.mdl"
 
-SWEP.Description = [[The Russian MP-155 smoothbore multi-shot 12 gauge shotgun, manufactured by IzhMekh ("Izhevsky Mechanical Plant"). The gun weighs less than its predecessor MP-153 and features enhanced ergonomics and an easy-to-replace barrel mechanism. The new design also makes it easier to use for left-handed users.]]
+SWEP.Description = "eft_weapon_mp155_desc"
 
 SWEP.StandardPresets = {
     "[Ultima]XQAAAQAZAgAAAAAAAAA9iIIiM7tuo1AtT00OeFD3YPfocKoikvJMId48ZDBq+iHfog+A8c9A5B7hAB27XdX5qDS4/H3XqBOEbtI8BAsg2p2Pw8zGQ6zH/sO1g0PQ+9wFCOEEtKzrytxgs8iurX7yLP+Ox9VlNzUOnVLztzJdv7Np5bUfJJ5Lvnj3Xr+3VSgrWkEQDYNQgkyTthN9+2unnhLn3aXU/GLPyANj3SWBFLm0oajrWGY00mdgmrdTyPdWWn9TAQQLE6tMygA=",
